@@ -3,14 +3,34 @@
              x:Class="MauiApp1.MainPage"
              BackgroundColor="#F5F5F5"
              Title="Note Taker - Designed by Hossein">
-    <VerticalStackLayout Spacing="20" Padding="20">
-        <Label Text="Welcome to Note Taker App"
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="20">
+
+        <!-- Welcome Message -->
+        <Label Text="Welcome to Note Taker App 😽"
                Style="{StaticResource LabelStyle}"
                FontSize="24"
-               FontAttributes="Bold"/>
-        <Button Text="Go to Note Page" 
-                Clicked="OnGoToNotePageClicked" 
-                Style="{StaticResource ButtonStyle}"
-                HeightRequest="50"/>
-    </VerticalStackLayout>
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Grid.Row="0" />
+
+        <!-- Central Content Area -->
+        <VerticalStackLayout Spacing="20" 
+                             HorizontalOptions="FillAndExpand" 
+                             VerticalOptions="CenterAndExpand" 
+                             Grid.Row="1">
+            <Button Text="Go to Note Page" 
+                    Clicked="OnGoToNotePageClicked" 
+                    Style="{StaticResource ButtonStyle}"
+                    HeightRequest="70"/>
+        </VerticalStackLayout>
+
+        <!-- Designer Credits -->
+        <Label Text="This app designed by Hossein Shams And Mehregan Shokuhi 🤌🔥"
+               Style="{StaticResource LabelStyle}"
+               FontSize="16"
+               HorizontalTextAlignment="Center"
+               Grid.Row="2" />
+
+    </Grid>
 </ContentPage>
